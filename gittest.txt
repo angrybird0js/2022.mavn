@@ -1,0 +1,6 @@
+branch
+
+분기 병합 활용
+
+git branch
+
