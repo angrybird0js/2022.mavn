@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">{{ message }}</div>
+    <br />
+    
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          message: "Hello Vue!",
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="testif">조건문</p>
+    </div>
+    <br />
+    
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          testif: false
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Getting Strated</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="test">If</p>
+      <p v-show="test">Show</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          message: "Hello vue.js",
+          test: false,
+        },
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="i in arr">{{ i.text }}</li>
+      </ul>
+    </div>
+    <br />
+    
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          arr: [
+            { text: '반복문 1'},
+            { text: '반복문 2'},
+            { text: '반복문 3'}
+          ]
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Getting Strated</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-for="(value, name, index) in object">
+        {{ index }}. {{ name }}: {{ value }}
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          object: {
+            title: "How to do lists in Vue",
+            author: "Jane Doe",
+            publishedAt: "2016-04-10",
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <button v-on:click="changeMsg">메시지 변경</button>
+    </div>
+    <br />
+    
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          message: "Hello Vue.js!"
+        },
+        methods: {
+          changeMsg: function() {
+            this.message = '안녕하세요 Vue.js!'
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Getting Strated</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="num += 1">Add</button>
+      <p>{{ num }}</p>
+      <br>
+      <button v-on:click="say('hi')">Say hi</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          num: 0
+        },
+        methods: {
+          say: function(val) {
+            alert(val);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+    <br />
+
+    <script>
+      var vm1 = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!'
+        }
+      });
+    </script>
+  </body>
+</html>

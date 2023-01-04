@@ -207,14 +207,14 @@ a {
 }
 
 
-.project.active .project-underline, .project:hover .project-underline {
+.project:active .project-underline, .project:hover .project-underline {
     width: 4.5em;
     transition-delay: .5s;
 }
 
 
-.project.active .project-description span,
-.project.active .project-title span,
+.project:active .project-description span,
+.project:active .project-title span,
 .project:hover .project-description span,
 .project:hover .project-title span {
     transform: translateY(0);
