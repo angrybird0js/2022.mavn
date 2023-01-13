@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name = "author" content = "wonshin" >
+    <meta name = "description" content = "Portfolio" >
+    <meta name = "keyword" content = " Javascript, Ruby, Haskell, LISP, Perl, Delphi " >
+    <meta name = "Resource-type" content= "Document">
+    <meta name = "robots" content= "ALL">
+
+
+    <title> ID:wonshin DEV-Note & Portfolio</title>
+
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 3rem;
+        
+        }
+
+        #form {
+            background: rgba(0,0,0, 0.2);
+            padding: 4px;
+            position: fixed;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            display:flex;
+            height: 45px;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+
+        }
+
+        #input {
+            border: none;
+            padding: 0.16px;
+            flex-grow: 1;
+            border-radius: 32px;
+            margin: 4px;
+
+
+        }
+
+        #input:focus {
+            outline:none;
+        }
+
+
+        #form button {
+            background:#333;
+            border:none;
+            padding: 0.1rem;
+            margin:4px;
+            border-radius: 5px;
+            outline:none;
+            color: #fff;
+        }
+
+        #messages {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #messages > li {
+            padding: 8px 16px;
+
+
+        }
+
+        #messages > li:nth-child(odd) {
+            background: #efefef;
+
+        }
+
+    </style>
+
+  </head>
+  <body>
+
+    <ul id="messages"></ul>
+    <form action="" id="form">
+    <input type="input" autocomplete="off" id="input">
+    <input type="submit" value="전송" id="submit">
+    
+    <!-- <button>전송</button> -->
+    </form>
+    
+
+    <script src = "/socket.io/socket.io.js"></script>
+    <!-- <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script> -->
+    <script>
+        let socket = io()
+
+        let message = document.getElementById('messages')
+        let form = document.getElementById('form')
+        let input = document.getElementById('input')
+        let submit = document.getElementById('submit')
+
+        submit.addEventListener( "submit", function(e) { //발신, 
+            // form submit 아닌 button click이 아닌가
+            // button click이 submit 기능 하는가
+            // form 대신 버튼 컨트롤
+            e.preventDefault()
+            if( input.value ) {
+                socket.emit( 'chat_message' , input.value ) // 동기적
+                input.value = ''
+            }
+
+        })
+
+        // 수신
+
+        socket.on( 'chat_message' , function(msg) { 
+            // msg 빠뜨린 오류 수정
+            // 서버에서 보낸 io.emit 메시지를 여기서 받는다.
+            let talk = document.createElement('li')
+            talk.textContent = msg 
+            message.appendChild(talk)
+            window.scrollTo( 0 , document.body.scrollHeight )
+         
+        })
+
+
+    </script>
+  </body>
+</html>

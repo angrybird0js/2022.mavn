@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "path": "../2022.10.06.HTML"
+    },
+    {
+      "path": "../2022.10.14.Javascript"
+    },
+    {
+      "path": "../exam1"
+    },
+    {
+      "path": "../bookcode"
+    },
+    {
+      "path": "../2022.11.16. javascript 제출용"
+    },
+    {
+      "path": "../2022.11.28.HTML"
+    },
+    {
+      "path": "."
+    },
+    {
+      "path": "../../vjs"
+    },
+    {
+      "path": "../../nodejs"
+    }
+  ],
+  "settings": {
+    "editor.fontSize": 14,
+    "liveServer.settings.multiRootWorkspaceName": "2022.10.14.Javascript",
+    "liveServer.settings.CustomBrowser": "chrome",
+    "editor.formatOnSave": true
+  }
+}

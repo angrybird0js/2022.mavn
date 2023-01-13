@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name = "viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name = "author" content = "wonshin" >
+    <meta name = "description" content = "Portfolio" >
+    <meta name = "keyword" content = "  " >
+    <meta name = "Resource-type" content= "Document">
+    <meta name = "robots" content= "ALL">
+
+
+    <title></title>
+
+    <link rel="stylesheet" href="">
+    <script>
+
+        // retuen new Promese 필요없이 promese를 반환함
+        // ajax 필요없이 서버에서 가져올수 있다.
+
+        const present = fetch('https://api.upbit.com/v1/ticker?markets=KRW-BTC')
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data)
+            // JSON 값을 javascript 객체로 변환
+            
+            let time = data[0].trade_time 
+            let prix = data[0].trade_price
+
+            console.log(time, prix) // 정상출력
+
+            localStorage.setItem( time, prix )
+            // setTimeout 으로 30개의 레코드를 읽어오게 하고
+            // dom에 표시한다.
+        })
+        .catch((error) => console.error('실패:', error))
+
+        console.log(present) // 먼저 나옴
+
+
+        document.addEventListener('DOMContentLoaded' , () => {
+            
+            // div 따로 배정하려면 하나 더 만들것
+
+
+            //lst_price.textContent = ''
+            const keys = Object.keys(localStorage)
+            console.log("keys : " , keys)
+            keys.sort(function(a, b)  { // 오름차순이라 없어도 무방함
+            return a - b; // 내림차순은 a b 순서를 바꾼다
+            })
+
+            for(const key of keys) {
+                // value 찾기
+                const value = localStorage.getItem(key);
+                console.log("value : ", value)
+
+                const lst_price = document.createElement('div')
+                lst_price.setAttribute('class' , 'prt')
+                lst_price.style.width = '300px'
+                lst_price.style.backgroundColor = 'Orange'
+                // document.getElementsByClassName('prt').innerHTML = `time: ${key} , price: ${value}`
+                lst_price.innerHTML = `time: ${key} , price: ${value}` // 정상출력됨
+                document.body.appendChild(lst_price)
+
+
+ 
+                // 결과 출력
+                // document.write(key + " : " + value + "<br />");
+                // div 를 따로 감싸게 되면 출력함수를 따로 만들것.
+                // id 별도로 배당
+                
+                
+            }
+
+        })
+
+
+    </script>
+
+  </head>
+  <body>
+    <h1>Fetch 함수 사용례</h1>
+
+  </body>
+</html>
