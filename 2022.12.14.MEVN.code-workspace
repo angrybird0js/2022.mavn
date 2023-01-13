@@ -22,21 +22,10 @@
       "path": "."
     },
     {
-      "path": "../2022.12.14.cowork"
-    },
-    {
-      "name": "project-bbs-",
-      "path": "../bbs_exam/project-bbs-"
-    },
-    {
       "path": "../../vjs"
     },
     {
-      "name": "TeamProject",
-      "path": "../../team2/TeamProject"
-    },
-    {
-      "path": "../multer_exam"
+      "path": "../../nodejs"
     }
   ],
   "settings": {

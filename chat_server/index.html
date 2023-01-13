@@ -84,8 +84,10 @@
 
     <ul id="messages"></ul>
     <form action="" id="form">
-    <input type="input" autocomplete="off">
-    <button>전송</button>
+    <input type="input" autocomplete="off" id="input">
+    <input type="submit" value="전송" id="submit">
+    
+    <!-- <button>전송</button> -->
     </form>
     
 
@@ -97,8 +99,12 @@
         let message = document.getElementById('messages')
         let form = document.getElementById('form')
         let input = document.getElementById('input')
+        let submit = document.getElementById('submit')
 
-        form.addEventListener( "submit", function(e) { //발신
+        submit.addEventListener( "submit", function(e) { //발신, 
+            // form submit 아닌 button click이 아닌가
+            // button click이 submit 기능 하는가
+            // form 대신 버튼 컨트롤
             e.preventDefault()
             if( input.value ) {
                 socket.emit( 'chat_message' , input.value ) // 동기적
