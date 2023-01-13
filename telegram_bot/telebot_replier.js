@@ -5,7 +5,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = process.env.TOC
+const token = process.env.TTC
 // 'YOUR_TELEGRAM_BOT_TOKEN';
 // 
 
