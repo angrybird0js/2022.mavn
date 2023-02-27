@@ -26,12 +26,16 @@
     },
     {
       "path": "../../nodejs"
+    },
+    {
+      "path": "../../tflow"
     }
   ],
   "settings": {
     "editor.fontSize": 14,
-    "liveServer.settings.multiRootWorkspaceName": "2022.10.14.Javascript",
+    "liveServer.settings.multiRootWorkspaceName": "tflow",
     "liveServer.settings.CustomBrowser": "chrome",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "git.ignoreLimitWarning": true
   }
 }

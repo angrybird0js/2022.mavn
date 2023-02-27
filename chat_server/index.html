@@ -116,12 +116,12 @@
         // 수신
 
         socket.on( 'chat_message' , function(msg) { 
-            // msg 빠뜨린 오류 수정
+            
             // 서버에서 보낸 io.emit 메시지를 여기서 받는다.
-            let talk = document.createElement('li')
-            talk.textContent = msg 
-            message.appendChild(talk)
-            window.scrollTo( 0 , document.body.scrollHeight )
+            // let talk = document.createElement('li')
+            // talk.textContent = msg 
+            // message.appendChild(talk)
+            // window.scrollTo( 0 , document.body.scrollHeight )
          
         })
 

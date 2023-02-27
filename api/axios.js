@@ -16,7 +16,7 @@ const ret = ax.get("http://smartcity.gimhae.go.kr/smart_tour/dashboard/api/publi
 
 
         //    console.log(res) // 개별 item 들이 Object로 표시됨
-        // console.log(res.data.data[0]) // 미세먼지 센서 정보
+        console.log(res.data.data[0]) // 미세먼지 센서 정보
         // res.data.data[0] 전역변수로 반출함
 
     })
